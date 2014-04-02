@@ -1,0 +1,43 @@
+highway
+driver
+police officer
+street
+gas station
+traffic
+to go straight ahead
+to have a flat tire
+to have an accident
+to park
+to turn right/left
+gas
+brakes
+trunk
+steering wheel
+mechanic
+engine
+hood
+license plate
+oil
+windshield wiper
+headlight
+seatbelt
+windshield
+to repair
+to fill up
+track; platform
+bus stop
+ticket office
+schedule
+fine
+first/second class
+ticket collector
+to validate (a ticket)
+car
+boat
+bus
+bicycle
+truck
+ship
+taxi
+subway
+train

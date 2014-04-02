@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Practice Chapter 8a Vocabulary</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    </head>
+
+    <body>            
+        <div class="mainContent" id="practiceContent">
+            <div id="questionOutput"></div>
+            <div id="feedback">
+                <span id="deOutput"></span>
+            </div>
+            <div id="userInput">
+                <input type="text" id="inputBoxDe" autocomplete="off" placeholder="Auf Deutsch">
+                <input type="submit" value="Submit" id="submitButton">
+                <input type="submit" value="Next" id="nextButton">
+            </div>
+        </div>
+        <footer>
+        </footer>
+            
+
+        <script>
+        /*jslint browser: true */
+        var firstInputBox = document.getElementById("inputBoxDe");
+        var submitButton = document.getElementById("submitButton");
+        var nextButton = document.getElementById("nextButton");
+        var questionOutput = document.getElementById("questionOutput");
+        var deOutput = document.getElementById("deOutput");
+        var randNum, deGuess;
+        var deArray, enArray = new Array();
+
+        function getArrays() {
+            $.when(
+                $.get("ch_8a_vocabulary_de.txt", function(data) {
+                    deArray = data.split("\n");
+                }),
+                $.get("ch_8a_vocabulary_en.txt", function(data) {
+                    enArray = data.split("\n");
+                })
+            ).then(function() {
+                f();
+            }
+            ).fail(function() {
+                alert("Failed to load text files!");
+            });    
+        }
+
+        function submit() {
+            "use strict";
+            deGuess = firstInputBox.value;
+            deOutput.style.display = "inline";
+            deOutput.style.color = "green";
+            if(deGuess != deArray[randNum]) {
+                deOutput.style.color="red";
+            }
+            deOutput.innerHTML = deArray[randNum];
+            nextButton.style.display = "block";
+            submitButton.style.display = "none";
+            firstInputBox.setAttribute("onKeyDown", "if(event.keyCode == 13) { f(); return false; }");
+        }
+
+        function f() {
+            "use strict";
+            firstInputBox.value = "";
+            nextButton.style.display = "none";
+            deOutput.style.display = "none";
+            submitButton.style.display = "block";
+            firstInputBox.focus();
+            firstInputBox.select();
+            randNum = Math.floor(Math.random() * enArray.length);
+            questionOutput.innerHTML = enArray[randNum];
+            firstInputBox.setAttribute("onKeyDown", "if(event.keyCode == 13) { submit(); return false; }");
+        }
+
+        submitButton.addEventListener("click", submit, false);
+        nextButton.addEventListener("click", f, false);
+
+        window.onload = getArrays();
+        </script>
+    </body>
+</html>

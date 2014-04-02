@@ -1,0 +1,43 @@
+die Autobahn
+der Fahrer
+der Polizist
+die Straße
+die Tankstelle
+der Verkehr
+geradeaus fahren
+einen Platten haben
+einen Unfall haben
+parken
+rechts/links abbiegen
+das Benzin
+die Bremse
+der Kofferraum
+das Lenkrad
+der Mechaniker
+der Motor
+die Motorhaube
+das Nummernschild
+das Öl
+der Scheibenwischer
+der Scheinwerfer
+der Sicherheitsgurt
+die Windschutzscheibe
+reparieren
+tanken
+der Bahnsteig
+die Bushaltestelle
+der Fahrkartenschalter
+der Fahrplan
+das Bußgeld
+die erste/zweite Klasse
+der Schaffner
+(die Fahrkarte) entwerten
+das Auto
+das Boot
+der Bus
+das Fahrrad
+der LKW
+das Schiff
+das Taxi
+die U-Bahn
+der Zug
